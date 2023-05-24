@@ -19,6 +19,8 @@ router.get('/', async (req, res) => {
                 
                 
             })
+            
+            //This need to be uncomment section
             const warning = []
             const error = []
             const notice=[]
@@ -34,6 +36,7 @@ router.get('/', async (req, res) => {
                     notice.push(element)
                 }
             });
+            
             // const errorResults = await pa11y(req.query.url, {
             //     standard: "WCAG2AA",
             //     runners: ['htmlcs'],
@@ -45,7 +48,9 @@ router.get('/', async (req, res) => {
             //     includeWarnings:true
                 
             // })
+            //This need to be uncomment section
             res.status(200).json({name:results?.documentTitle,address:results?.pageUrl,error:error,warning:warning,notice:notice})
+            //res.status(200).json(results)
         }
     }
     catch (er) {
